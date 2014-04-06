@@ -70,7 +70,6 @@ else
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
               --with-features=huge\
-              --with-lua-prefix=/opt/local\
               --enable-pythoninterp\
               --enable-gui=no\
               --without-x\
