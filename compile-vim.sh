@@ -8,11 +8,9 @@ echo -n "$(tput setaf 1)Update Vim sources? $(tput bold)[Y/n] $(tput sgr 0)"
 read update
 
 if [ "$update" != "n" ]; then
-
   hg up -C
   hg pull
   hg update
-
   make clean
   make distclean
 fi
@@ -83,7 +81,7 @@ echo ""
 echo -n "$(tput setaf 1)Shall we proceed with compiling Vim? $(tput bold)[Y/n] $(tput sgr 0)"
 read compile
 
-if [ $compile != "n" ]; then
+if [ "$compile" != "n" ]; then
   echo ""
   echo "$(tput setaf 1)$(tput bold)COMPILING AND INSTALLING VIM$(tput sgr 0)"
   echo ""
@@ -94,4 +92,3 @@ else
   echo "$(tput setaf 1)$(tput bold)ABORTED!$(tput sgr 0)"
   echo ""
 fi
-
