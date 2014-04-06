@@ -1,45 +1,33 @@
-vim-g
-=====
+Source Vim
+==========
 
-![genoma's vim](screen.png)
+# A bash script to compile Vim with Homebrew Python/Ruby/Lua versions
 
-**This Vim configuration is basically a backup of my setup, it comprehends a carefully chosen selection of plugins and settings that are used mainly for sass/less/coffeescript/html editing.**
+## Why
 
-# INFORMATIONS
+If you want to compile Vim from source, because you, like me, want the latest developement version and you are using Homebrew to keep your development environment up to date, you should know that the _brewed_ Python version doesn't links to Vim with `--enable-pythoninterp`, nor does the _Macports_ version.
 
-This setup has been tested with Vim compiled from source with **Lua, Ruby, Python**, latest iTerm2 test release and Homebrew on OSX Mavericks.
+The solution is to **patch** the `src/auto/configure` with the correct path:
 
-## BASIC STEPS
+`-F/usr/local/Cellar/python/2.7.6/Frameworks -framework Python`
 
-### HomeBrew
-Download **Homebrew** from [this link](http://brew.sh/) and follow the instructions.
+## Script
 
-Install **the_silver_searcher, Python, Ruby, Lua, Perl, Mercurial**
+The `./compile-vim.sh` is a simple script that can be used to automate the Vim source compilation, it keeps your `~/vim` source `hg` repo up to date, it patches the `configure` script and it compiles and install vim in `/usr/local/bin`.
 
-### VIM
-Clone the **Vim** official repository
+## Script option
 
-`$ hg clone https://vim.googlecode.com/hg/ ~/vim`
+The script interactively present you a few options:
 
-Launch the `./compile_vim.sh` that basically will compile, patch for the _brewed_ Python 2.7.6
+- Update Vim source files
+- Apply patch for Homebrew Python 2.7.X
+- Configure Vim with 3 possible configurations:
+	- Complete -> Python/Ruby/Lua/Perl support
+	- Essential -> Python support only
+	- Minimal -> basically the default configuration with only VimL support
 
-### A word on compile_vim.sh
+## License
 
-The file comprehends 3 configurations that can be used for different settings, while the one used by default is just enough to be used with the provided plugins. Comment/uncomment the one you'd like to use.
-
-## Clone this repository
-
-`git clone https://github.com/genoma/g-vim.git .vim`
-
-### Download Submodules
-
-`git submodule foreach git pull`
-
-# PLUGINS
-
-The `bundles.txt` file contains all the plugins installed
-
-# LICENSE
 The MIT License (MIT)
 
 Copyright (c) 2014 Alessandro Vioni
