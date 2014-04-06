@@ -39,14 +39,14 @@ read compile
 
 
 echo ""
-if [ "$compile" == 1 ]; then
+if [ "$compile" == "1" ]; then
   # complete compilation with lua/ruby/python/perl
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
               --with-features=huge\
               --enable-rubyinterp\
               --enable-luainterp\
-              --with-lua-prefix=/opt/local\
+              --with-lua-prefix=/usr/local\
               --enable-perlinterp\
               --enable-pythoninterp\
               --enable-gui=no\
@@ -55,7 +55,7 @@ if [ "$compile" == 1 ]; then
               --disable-nls\
               --with-compiledby=jenoma@gmail.com\
               --enable-fail-if-missing
-elif [ "$compile" == 3 ]; then
+elif [ "$compile" == "3" ]; then
   # minimal compilation with huge no lua/ruby/python
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
@@ -80,7 +80,18 @@ else
 fi
 
 echo ""
-echo "$(tput setaf 1)$(tput bold)COMPILING AND INSTALLING VIM$(tput sgr 0)"
-echo ""
+echo -n "$(tput setaf 1)Shall we proceed with compiling Vim? $(tput bold)[Y/n] $(tput sgr 0)"
+read compile
 
-make && make install
+if [ $compile != "n" ]; then
+  echo ""
+  echo "$(tput setaf 1)$(tput bold)COMPILING AND INSTALLING VIM$(tput sgr 0)"
+  echo ""
+  make
+  make install
+else
+  echo ""
+  echo "$(tput setaf 1)$(tput bold)ABORTED!$(tput sgr 0)"
+  echo ""
+fi
+
