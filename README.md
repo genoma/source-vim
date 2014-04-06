@@ -1,11 +1,7 @@
 Source Vim
 ==========
 
-# A bash script to compile Vim with Homebrew Python/Ruby/Lua versions
-
-## Why
-
-If you want to compile Vim from source, because you, like me, want the latest developement version and you are using Homebrew to keep your development environment up to date, you should know that the _brewed_ Python version doesn't links to Vim with `--enable-pythoninterp`, nor does the _Macports_ version.
+If you want to compile Vim from source, because you, like me, want the latest developement version and you are using **Homebrew** to keep your development environment up to date, you should know that the _brewed_ Python version doesn't links to Vim with `--enable-pythoninterp`, nor does the _Macports_ version.
 
 The solution is to **patch** the `src/auto/configure` with the correct path:
 
