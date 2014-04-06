@@ -66,7 +66,7 @@ elif [ "$compile" == 3 ]; then
               --with-compiledby=jenoma@gmail.com\
               --enable-fail-if-missing
 else
-  # essential compilation whith everything needed for the used plugins
+  # essential compilation whith just Homebrew Python 2.7.X
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
               --with-features=huge\
