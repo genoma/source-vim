@@ -22,8 +22,6 @@ if [ "$python" != "n" ]; then
   cp brew-python.patch ~/vim
   patch ~/vim/src/auto/configure < brew-python.patch
   rm brew-python.patch
-else
-  rm brew-python.patch
 fi
 
 echo ""
