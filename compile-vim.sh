@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cp brew-python.patch ~/vim
 cd ~/vim
 
 echo ""
@@ -19,8 +20,9 @@ echo -n "$(tput setaf 1)Apply patch for Homebrew Python? $(tput bold)[Y/n] $(tpu
 read python
 
 if [ "$python" != "n" ]; then
-  cp brew-python.patch ~/vim
   patch ~/vim/src/auto/configure < brew-python.patch
+  rm brew-python.patch
+else
   rm brew-python.patch
 fi
 
