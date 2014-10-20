@@ -27,7 +27,7 @@ else
 fi
 
 echo ""
-echo "$(tput setaf 1) $(tput bold)There are 3 possible Vim compile configuration: $(tput sgr 0)"
+echo "$(tput setaf 1) $(tput bold)There are 4 possible Vim compile configuration: $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *1) Complete -> Python/Ruby/Lua/Perl $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *2) Essential -> Python $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *3) Lua $(tput sgr 0)"
