@@ -28,7 +28,7 @@ fi
 
 echo ""
 echo "$(tput setaf 1) $(tput bold)There are 4 possible Vim compile configuration: $(tput sgr 0)"
-echo "$(tput setaf 1) $(tput bold) - *1) Complete -> Python/Ruby/Lua/Perl $(tput sgr 0)"
+echo "$(tput setaf 1) $(tput bold) - *1) Complete -> Python/Ruby/Lua $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *2) Essential -> Python $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *3) Lua $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *4) Minimal $(tput sgr 0)"
@@ -39,14 +39,13 @@ read compile
 
 echo ""
 if [ "$compile" == "1" ]; then
-  # complete compilation with lua/ruby/python/perl
+  # complete compilation with lua/ruby/python
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
               --with-features=huge\
               --enable-rubyinterp\
               --enable-luainterp\
               --with-lua-prefix=/usr/local\
-              --enable-perlinterp\
               --enable-pythoninterp\
               --enable-gui=no\
               --without-x\
