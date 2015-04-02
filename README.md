@@ -1,9 +1,9 @@
 Source Vim
 ==========
 
-# Note on Vim latest releases
+### Note on Vim latest releases
 
-## The v7-4-676 contains a fix to compile with the right Python framework, and it just works with Homebrew and Macporst or Fink.
+*The v7-4-676 contains a fix to compile with the right Python framework, and it just works with Homebrew and Macporst or Fink.*
 
 If you want to compile Vim from source, because you, like me, want the latest developement version and you are using **Homebrew** to keep your development environment up to date, you should know that the _brewed_ Python version doesn't links to Vim with `--enable-pythoninterp`, nor does the _Macports_ version.
 
